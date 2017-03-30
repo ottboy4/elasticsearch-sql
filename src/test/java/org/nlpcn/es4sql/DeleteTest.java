@@ -7,6 +7,7 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.nlpcn.es4sql.exception.SqlParseException;
 import sun.applet.Main;
@@ -34,6 +35,7 @@ public class DeleteTest {
 
 
 	@Test
+	@Ignore("Delete functionality removed")
 	public void deleteAllTest() throws IOException, SqlParseException, SQLFeatureNotSupportedException {
 		delete(String.format("DELETE FROM %s/account_temp", TEST_INDEX));
 
@@ -46,6 +48,7 @@ public class DeleteTest {
 
 
 	@Test
+	@Ignore("Delete functionality removed")
 	public void deleteWithConditionTest() throws IOException, SqlParseException, SQLFeatureNotSupportedException {
 		delete(String.format("DELETE FROM %s/phrase WHERE phrase = 'quick fox here' ", TEST_INDEX));
 		// Assert no results exist for this type.

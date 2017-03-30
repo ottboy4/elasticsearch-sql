@@ -62,11 +62,6 @@ public class ESActionFactory {
                     handleSubQueries(client, select);
                     return handleSelect(client, select);
                 }
-			case "DELETE":
-                SQLStatementParser parser = createSqlStatementParser(sql);
-				SQLDeleteStatement deleteStatement = parser.parseDeleteStatement();
-				Delete delete = new SqlParser().parseDelete(deleteStatement);
-				return new DeleteQueryAction(client, delete);
             case "SHOW":
                 return new ShowQueryAction(client,sql);
 			default:
